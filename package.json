@@ -1,0 +1,39 @@
+{
+  "name": "@atomic-reactor/globber",
+  "version": "0.0.2",
+  "description": "Recursively match files using the patterns the shell uses",
+  "exports": "./index.js",
+  "type": "module",
+  "scripts": {
+    "test": "mocha ./test/spec.js",
+    "pub": "node ./prepublish.js && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Atomic-Reactor/Globber.git"
+  },
+  "keywords": [
+    "glob",
+    "reactium"
+  ],
+  "author": "Reactium LLC https://reactium.io",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Atomic-Reactor/Globber/issues"
+  },
+  "homepage": "https://github.com/Atomic-Reactor/Globber#readme",
+  "dependencies": {
+    "fs-extra": "^10.1.0",
+    "ignored": "^2.0.4",
+    "micromatch": "^4.0.5",
+    "object-path": "^0.11.8",
+    "underscore": "^1.13.6"
+  },
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "chalk": "^5.1.2",
+    "inquirer": "^9.1.4",
+    "mocha": "^10.1.0",
+    "semver": "^7.3.8"
+  }
+}
