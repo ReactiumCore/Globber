@@ -9,6 +9,7 @@ const defaultOptions = {
     expandDirectories: true,
     gitignore: false,
     ignoreFiles: [],
+    deep: 10,
 };
 
 const isMatch = (str, patterns) => {
@@ -54,6 +55,12 @@ class Glob {
             new Promise(async (resolve) => {
                 const output = [];
                 const results = await fs.readdir(dir);
+                if (
+                    String(posix(path.resolve(dir))).split(path.posix.sep)
+                        .length > this.opt.deep
+                ) {
+                    resolve([]);
+                }
 
                 const ignorePatterns = !op.get(this.opt, 'gitignore')
                     ? op.get(this.opt, 'ignoreFiles', [])
